@@ -1,6 +1,7 @@
 package br.com.forum.springbootv3.config.swagger;
 
 import br.com.forum.springbootv3.modelo.Usuario;
+import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ParameterBuilder;
@@ -19,7 +20,7 @@ public class SwaggerConfigurations {
     public Docket forumApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.forum.springbootv2"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.forum.springbootv3"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .ignoredParameterTypes(Usuario.class)

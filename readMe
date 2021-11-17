@@ -4,5 +4,6 @@ v1.2    postman: GET http://localhost:8080/topicos?pagina=0&qtd=1
 v1.3    postman ordenacao: GET http://localhost:8080/topicos?pagina=0&qtd=3&ordenacao=mensagem
 v1.4    postman simple pagin orden: GET http://localhost:8080/topicos?page=0&size=4&sort=id,asc
 
+        para acessar o swagger: http://localhost:8080/swagger-ui.html#/
 
 ------------------------------------------------------------------------------------------------------------------------
