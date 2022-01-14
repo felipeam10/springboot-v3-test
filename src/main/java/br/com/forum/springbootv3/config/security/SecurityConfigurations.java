@@ -4,6 +4,7 @@ import br.com.forum.springbootv3.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,6 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @EnableWebSecurity
 @Configuration
+@Profile("prod")
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -61,8 +63,8 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**");
     }
-    /* mostra a senha gerada pelo BCrypt
-    public static void main(String[] args) {
+    /* mostra a senha gerada pelo BCrypt - se cadastrar a senha como 123456 direto no banco, vai retornar um 400, a senha precisa estar encriptada no banco*/
+    /*public static void main(String[] args) {
         System.out.println(new BCryptPasswordEncoder().encode("123456"));
     }*/
 }
