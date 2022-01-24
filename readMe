@@ -34,3 +34,20 @@ v3
     Para conseguir injetar o MockMvc devemos anotar a classe de teste com @AutoConfigureMockMvc.
 
 ------------------------------------------------------------------------------------------------------------------------
+
+v4
+
+    gerando o jar da aplicação: C:\Users\DELL\eclipse-workspace\springboot-v3-test> mvn clean package
+    na pasta target se encontra o jar gerado:
+        PS C:\Users\DELL\eclipse-workspace\springboot-v3-test> cd .\target\
+        PS C:\Users\DELL\eclipse-workspace\springboot-v3-test\target> ls
+            springboot-v3-0.0.1-SNAPSHOT.jar
+            springboot-v3-0.0.1-SNAPSHOT.jar.original
+    para testar o jar, verifique se o projeto está fechado,
+    ir no cmd e executar: java -jar springboot-v3-0.0.1-SNAPSHOT.jar
+    Ao realizar o build, por padrão será criado um arquivo .jar.
+    É possível passar parâmetros para as configurações da aplicação via variáveis de ambiente.
+    É possível alterar o build para criar um arquivo .war, para deploy em servidores de aplicações.
+
+------------------------------------------------------------------------------------------------------------------------
+
